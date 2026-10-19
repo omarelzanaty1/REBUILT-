@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>REBUILT — Build yourself.</title>
+  <meta name="description" content="REBUILT — تطبيق إنتاجية وتطوير ذات يعتمد على العادات، المهام، والـ Gamification. Build yourself." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div id="gate-root" class="gate-root"></div>
+
+  <div id="app" style="display:none">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar__brand">
+        <span class="sidebar__logo">REBUILT</span>
+      </div>
+
+      <div class="sidebar__user">
+        <span class="sidebar__avatar" id="sidebar-avatar">🧑</span>
+        <div class="sidebar__user-info">
+          <span class="sidebar__username" id="sidebar-username">—</span>
+          <span class="sidebar__user-level">Level <span id="sidebar-level">1</span></span>
+        </div>
+        <span class="sidebar__streak-pill">🔥 <span id="sidebar-streak">0</span></span>
+      </div>
+
+      <nav class="sidebar__nav" aria-label="التنقل الرئيسي">
+        <button class="sidebar__nav-item" data-nav="dashboard"><span class="sidebar__nav-icon">🏠</span><span>الرئيسية</span></button>
+        <button class="sidebar__nav-item" data-nav="habits"><span class="sidebar__nav-icon">🔥</span><span>العادات</span></button>
+        <button class="sidebar__nav-item" data-nav="tasks"><span class="sidebar__nav-icon">✅</span><span>المهام</span></button>
+        <button class="sidebar__nav-item" data-nav="planner"><span class="sidebar__nav-icon">🗓️</span><span>يومي</span></button>
+        <button class="sidebar__nav-item" data-nav="analytics"><span class="sidebar__nav-icon">📊</span><span>الإحصائيات</span></button>
+        <button class="sidebar__nav-item" data-nav="achievements"><span class="sidebar__nav-icon">🏆</span><span>الإنجازات</span></button>
+        <button class="sidebar__nav-item" data-nav="ai"><span class="sidebar__nav-icon">✨</span><span>REBUILT AI</span></button>
+        <button class="sidebar__nav-item" data-nav="profile"><span class="sidebar__nav-icon">👤</span><span>الملف الشخصي</span></button>
+        <button class="sidebar__nav-item" data-nav="settings"><span class="sidebar__nav-icon">⚙️</span><span>الإعدادات</span></button>
+      </nav>
+
+      <div class="sidebar__footer">
+        <span class="sidebar__footer-name">REBUILT</span>
+        <span class="sidebar__footer-tagline">Build yourself.</span>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="page-content page-enter" id="page-content"></div>
+    </main>
+
+    <nav class="mobile-nav" aria-label="التنقل السريع">
+      <button class="mobile-nav__item" data-nav="dashboard" aria-label="الرئيسية"><span>🏠</span></button>
+      <button class="mobile-nav__item" data-nav="habits" aria-label="العادات"><span>🔥</span></button>
+      <button class="mobile-nav__item" data-nav="tasks" aria-label="المهام"><span>✅</span></button>
+      <button class="mobile-nav__item" data-nav="analytics" aria-label="الإحصائيات"><span>📊</span></button>
+      <button class="mobile-nav__item" data-nav="profile" aria-label="الملف الشخصي"><span>👤</span></button>
+      <button class="mobile-nav__item" id="mobile-more-btn" aria-label="المزيد"><span>⋯</span></button>
+    </nav>
+  </div>
+
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+  <div id="modal-root"></div>
+
+  <!-- Supabase JS (public anon key only; all security enforced by RLS) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <!-- Core (order matters: each file only depends on ones loaded before it) -->
+  <script src="js/data.js"></script>
+  <script src="js/icons.js"></script>
+  <script src="js/helpers.js"></script>
+  <script src="js/xp.js"></script>
+  <script src="js/streak.js"></script>
+  <script src="js/achievements.js"></script>
+  <script src="js/messages.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/toast.js"></script>
+  <script src="js/supabaseClient.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/supabaseData.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/ai.js"></script>
+  <script src="js/router.js"></script>
+  <script src="js/gate.js"></script>
+
+  <!-- Pages -->
+  <script src="js/pages/dashboard.js"></script>
+  <script src="js/pages/habits.js"></script>
+  <script src="js/pages/tasks.js"></script>
+  <script src="js/pages/planner.js"></script>
+  <script src="js/pages/analytics.js"></script>
+  <script src="js/pages/achievementsPage.js"></script>
+  <script src="js/pages/ai.js"></script>
+  <script src="js/pages/aiComingSoon.js"></script>
+  <script src="js/pages/profile.js"></script>
+  <script src="js/pages/settings.js"></script>
+
+  <!-- App bootstrap (last) -->
+  <script src="js/app.js"></script>
+</body>
+</html>
